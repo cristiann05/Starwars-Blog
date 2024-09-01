@@ -1,15 +1,26 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.css";
+import React, { useEffect, useContext } from 'react';
+import FloatingCart from '../views/FloatingCart.js';
+import { Context } from '../store/appContext.js';
+import backgroundImg from '../../img/background.jpg';
+import '../../styles/home.css';
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+const Home = () => {
+  const { actions } = useContext(Context);
+
+  useEffect(() => {
+    actions.getCharacters();
+    actions.getPlanets();
+  }, [actions]);
+
+  return (
+    <div className="home-container" style={{ backgroundImage: `url(${backgroundImg})` }}>
+      <div className="hero-text">
+        <h1>Welcome to the Star Wars Universe</h1>
+        <p>Explore the galaxy like never before</p>
+      </div>
+      <FloatingCart />
+    </div>
+  );
+};
+
+export default Home;

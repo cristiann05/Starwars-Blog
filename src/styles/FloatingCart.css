@@ -1,0 +1,92 @@
+.floating-cart {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #333; /* Color atractivo para el ícono del carrito */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.floating-cart:hover {
+  background-color: #444; /* Color más oscuro al pasar el ratón */
+}
+
+.cart-icon {
+  font-size: 28px; /* Aumento del tamaño del ícono */
+}
+
+.cart-content {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 300px; /* Ancho mayor para una mejor visibilidad */
+  max-height: 500px; /* Altura mayor para mostrar más elementos */
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-content h4 {
+  margin: 0;
+  font-size: 20px;
+  border-bottom: 2px solid #fff; /* Borde blanco para separar secciones */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.category-section {
+  margin-bottom: 20px; /* Espacio entre secciones */
+  border-bottom: 2px solid #444; /* Línea separadora entre secciones */
+  padding-bottom: 10px;
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff6f61; /* Color atractivo para los títulos de categoría */
+  margin-bottom: 10px;
+}
+
+.cart-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-content li {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+}
+
+.remove-button {
+  background: none;
+  border: none;
+  color: #ff6f61; /* Color del botón de eliminar */
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.remove-button:hover {
+  color: #e64a19; /* Color al pasar el ratón */
+}
